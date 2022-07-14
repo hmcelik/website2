@@ -43,7 +43,7 @@
   height: 90vmin;
   left: 50%;
   position: relative;
-  top: 50%;
+  top: 30%;
   transform: translate(-50%, -50%);
   width: 90vmin;
 }
@@ -112,7 +112,7 @@
     height: 90vmin;
     left: 50%;
     position: relative;
-    top: 50%;
+    top: 20%;
     transform: translate(-50%, -50%);
     width: 100%;
   }
@@ -129,7 +129,7 @@
     height: 90vmin;
     left: 50%;
     position: relative;
-    top: 50%;
+    top: 20%;
     transform: translate(-50%, -50%);
     width: 100%;
   }
