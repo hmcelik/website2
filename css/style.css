@@ -76,7 +76,7 @@ body {
   }
   
   .menu-icon {
-    position: absolute;
+    position: fixed;
     top: 18px;
     left: 30px;
     font-size: 24px;
@@ -194,3 +194,5 @@ body {
     }
   }
  .welcome{height: 100vh;}
+ 
+ 
