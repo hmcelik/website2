@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon...</title>
     <script src="https://kit.fontawesome.com/8e58388418.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style1.css"> 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style1.css">
 </head>
 <body>
     <input type="checkbox" id="menu-toggle" />
     <label for="menu-toggle" class="menu-icon"><i class="fa fa-bars"></i></label>
     <div class="content-container">
       <div class="site-title">
-        <h1 id="header">KocDesign</h1>
+        <h1>KocDesign</h1>
       </div>
       <div class="content">
         <section class="welcome">
@@ -41,6 +41,10 @@
         <li>About Us</li>
         <li>Catalog</li>
         <li>Contact</li>
+        <li>Dark Mode <label class="toggle-control" id="toggle">
+          <input type="checkbox" onclick="isChecked()">
+          <span class="control"></span>
+        </label></li>
       </ul>
     </div>
 <script src="js/javascript.js"></script>

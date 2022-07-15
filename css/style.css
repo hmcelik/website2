@@ -1,6 +1,17 @@
+:root{
+--primary-color: white;
+--secondary-color:black;
+--tertiary-color:#212121;
+}
+.dark-theme{
+  --primary-color: rgb(0, 0, 0);
+  --secondary-color:rgb(255, 255, 255);
+  --tertiary-color:#212121;
+  }
 body {
     font-family: "Lato", arial, sans-serif;
     margin: 0;
+    background-color: var(--primary-color);
   }
   
   /* -- main content -- */
@@ -15,10 +26,11 @@ body {
   }
   .site-title {
     text-align: center;
-    border-bottom: 1px solid #111111;
+    border-bottom: 1px solid var(--secondary-color);
     margin-bottom: 24px;
+    color: var(--secondary-color);
   }
-  
+  .animated-title{color: var(--secondary-color);}
   .site-title h1 {
     font-weight: 300;
     text-transform: uppercase;
@@ -33,7 +45,7 @@ body {
     line-height: 1.6em;
     margin-bottom: 24px;
   }
-  
+  .fa-bars{color: var(--secondary-color);}
   /* -- Slideout Sidebar -- */
   
   .slideout-sidebar {
@@ -44,7 +56,7 @@ body {
     width: 150px;
     height: 100%;
     padding: 20px;
-    background-color: #212121;
+    background-color:var(--tertiary-color);
     transition: all 300ms ease-in-out;
   }
   
@@ -60,13 +72,16 @@ body {
     border-bottom: 1px solid rgba(244, 244, 244, 0.4);
     color: rgba(244, 244, 244, 0.7);
   }
-  
   .slideout-sidebar ul li:last-child {
     border-bottom: 0;
+    display: flex;
   }
-  
+  .animated-title > div.text-top {
+    border-bottom: 1vmin solid var(--secondary-color);
+    top: 0;
+  }
   .slideout-sidebar ul li:hover {
-    color: rgba(244, 244, 244, 1);
+    color: #fafafa;
   }
   
   /* -- Menu Icon -- */
@@ -158,39 +173,6 @@ body {
         color: #ffffff;
         background-color: #777;
       }
-    }
-  }
-  @keyframes scribble {
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-  div#stripped {
-    max-width: 750px;
-    margin: 0 auto;
-    background: #000;
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/olga.jpg);
-    background-size: cover;
-    font-size: 0;
-  }
-  div#stripped svg {
-    background: rgb(0, 0, 0);
-    mix-blend-mode: darken;
-  }
-  
-  div#stripped svg polyline {
-    fill: none;
-    stroke: rgb(255, 255, 255);
-    stroke-width: 200;
-    stroke-dasharray: 20000;
-    stroke-dashoffset: 20000;
-    animation: scribble 3s linear forwards;
-  }
-  @media 
-  (-webkit-min-device-pixel-ratio: 2), 
-  (min-resolution: 192dpi) { 
-    div#stripped {
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/olga-2x.jpg);
     }
   }
  .welcome{height: 100vh;}
