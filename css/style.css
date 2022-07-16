@@ -1,5 +1,7 @@
 :root{
---primary-color: white;
+  --surface-color: #fff;
+  --curve: 40;
+--primary-color: #f9f9f9;
 --secondary-color:black;
 --tertiary-color:#212121;
 }
@@ -180,5 +182,193 @@ body {
     }
   }
  .welcome{height: 100vh;}
- 
+.teamcontainer {
+  grid-template-columns: repeat(4, 20%);
+  justify-content: space-around;
+  display: grid;
+  padding-top: 8rem;
+  row-gap: 3rem;
+}
+.teamitem {
+  text-align: center;
+  position: relative;
+}
+.teamimage {
+  width: 100%;
+}
+
+.card__image {      
+  width: 100%;
+  height: auto;
+}
+.card {
+  position: relative;
+  display: block;
+  height: 20rem;  
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;      
+  border-radius: calc(var(--curve) * 1px);    
+  background-color: var(--surface-color);      
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;    
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+}
+
+.card__arc {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;      
+  z-index: 1;
+}
+
+.card__arc path {
+  fill: var(--surface-color);
+  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}       
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+.card:hover .card__image{filter: blur(2px); transition: 0.3s;}
+.card__thumb {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;      
+  border-radius: 50%;      
+}
+
+.card__title {
+  font-size: 1em;
+  margin: 0 0 .3em;
+  color: #6A515E;
+}
+
+.card__tagline {
+  display: block;
+  margin: 1em 0;
+  font-family: "MockFlowFont";  
+  font-size: .8em; 
+  color: #D7BDCA;  
+}
+
+.card__description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: #000000;
+  font-family: "MockFlowFont";   
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}  
+@media screen and (max-width: 1300px) {
+  .card {
+    height: 17.5rem;
+  }  }
+@media screen and (max-width: 1200px) {
+  .card {
+    height: 16rem;
+  }
+  .card__description{font-size: 1rem;}
+  .card__thumb{height: 2.5rem; width: auto;}
+}
+@media screen and (max-width: 1120px) {
+  .card {
+    height: 14.5rem;
+  }
+  .card__title{font-size: 0.8rem;}
+  .card__description{font-size: 0.9rem;}
+}
+@media screen and (max-width: 991px) {
+  .teamcontainer{grid-template-columns: repeat(2, 40%);}
+  .card__title{font-size: 1rem;}
+  .card {
+    height: 18rem;
+  }
+}
+
+@media screen and (max-width: 910px) {
+  .card {
+    height: 16rem;
+  }
+  .card__description{font-size: 0.8rem;}
+  .card__title{font-size: 0.7rem;}
+  .card__thumb{width: 30px; height: 30px;}
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    height: 14.5rem;
+  }
+
+  .card__description{font-size: 0.7rem;}
+}
+@media screen and (max-width: 767px) {
+  .card {
+    height: 19.5rem;
+  }
+  .card__title{font-size: 1.3rem;}
+  .card__description{font-size: 1rem;}
+}
+@media screen and (max-width: 700px) {
+  .card {
+    height: 18.5rem;
+  }
+  
+  .card__description{font-size: 0.7rem;}
+}
+@media screen and (max-width: 600px) {
+  .card {
+    height: 16.5rem;
+  }
+  
+  .card__description{font-size: 0.7rem;}
+}
+@media screen and (max-width: 550px) {
+  .card {
+    height: 14.5rem;
+  }
+  
+  .card__description{font-size: 0.7rem;}
+}
+
+.card:hover {
+  transform:perspective(800px)       rotateY(0deg);
+  opacity:1;
+}
+.card {  
+  -webkit-box-reflect:below 2px linear-gradient(transparent, transparent, #0004);
+  
+  transform-origin:center;
+  transform:perspective(800px) rotateY(25deg);
+  transition:0.5s;
+}
  
